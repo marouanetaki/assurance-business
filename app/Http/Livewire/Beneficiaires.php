@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire;
 
+use App\Exports\BeneficiairesExport;
 use Livewire\Component;
 use App\Models\Beneficiaire;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Beneficiaires extends Component
 {
@@ -100,5 +102,9 @@ class Beneficiaires extends Component
     {
         $benef = Beneficiaire::where('user_id', '=' ,Auth::user()->id)->get();
         return view('livewire.admin.beneficiaire.beneficiaires', ['benef' => $benef]);
+    }
+
+    public function export(){
+        return Excel::download(new BeneficiairesExport, 'Listes_Beneficiaires.xlsx');
     }
 }

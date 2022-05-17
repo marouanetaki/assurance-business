@@ -18,15 +18,16 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Auth::routes(['verify' => true]);
 
 // Route Espace Adhérent
-Route::get('dashboard/beneficiaires', Beneficiaires::class) ;
-Route::get('dashboard/dossiers', Dossiers::class)->name('dossier.index') ;
-Route::get('dashboard/details-dossiers/{id}', DetailDossiers::class)->name('dossier.detail');
-Route::get('dashboard/accidents-de-travail', Accidents::class);
-Route::get('dashboard/prise-en-charge', Prises::class);
-Route::get('dashboard', Profiles::class);
+Route::get('dashboard/beneficiaires', Beneficiaires::class)->middleware('auth');
+Route::get('dashboard/dossiers', Dossiers::class)->name('dossier.index')->middleware('auth');
+Route::get('dashboard/details-dossiers/{id}', DetailDossiers::class)->name('dossier.detail')->middleware('auth');
+Route::get('dashboard/accidents-de-travail', Accidents::class)->middleware('auth');
+Route::get('dashboard/prise-en-charge', Prises::class)->middleware('auth');
+Route::get('dashboard', Profiles::class)->middleware('auth');
 
 // Export
-Route::get('users/export/', [Users::class, 'export'])->name('users.export');
+Route::get('users/export/', [Users::class, 'export'])->name('users.export')->middleware('auth');
+Route::get('beneficiaires/export/', [Beneficiaires::class, 'export'])->name('beneficiaires.export')->middleware('auth');
 
 // Route Espace Admin et Responsable
 Route::group(['prefix' => 'admin'], function () {

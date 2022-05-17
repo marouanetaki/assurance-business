@@ -36,7 +36,7 @@
                         </label>
 
                         <label class="labels col-md-12">Entreprise
-                            <input type="text" class="form-control" disabled>
+                            <input type="text" class="form-control" wire:model="entreprise" readonly>
                         </label>
 
                         <label class="labels col-md-12">Password

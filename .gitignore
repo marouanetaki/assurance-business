@@ -2,7 +2,7 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
-#  git -c http.sslVerify=false push https://github.com/marouanetaki/Assurance.git
+#  git -c http.sslVerify=false push https://github.com/marouanetaki/assurance-business.git
 
 # Laravel 4 specific
 bootstrap/compiled.php
