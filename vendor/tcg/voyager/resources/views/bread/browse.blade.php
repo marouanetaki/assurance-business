@@ -27,6 +27,11 @@
                 <input type="checkbox" @if ($showSoftDeleted) checked @endif id="show_soft_deletes" data-toggle="toggle" data-on="{{ __('voyager::bread.soft_deletes_off') }}" data-off="{{ __('voyager::bread.soft_deletes_on') }}">
             @endif
         @endcan
+        @if($dataType->slug == 'users')
+            <a href="{{ route('users.export') }}" class="btn btn-info btn-add-new">
+                <i class="voyager-download"></i> <span>Export</span>
+            </a>
+        @endif
         @foreach($actions as $action)
             @if (method_exists($action, 'massAction'))
                 @include('voyager::bread.partials.actions', ['action' => $action, 'data' => null])

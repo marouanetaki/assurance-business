@@ -1,5 +1,12 @@
 $(document).ready(function() {
     "use strict";
+
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
     
     // sidebar navigation
     $('.sidebar').metisMenu();

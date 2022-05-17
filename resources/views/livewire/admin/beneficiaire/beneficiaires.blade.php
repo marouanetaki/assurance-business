@@ -4,7 +4,6 @@
         <i class="fa fa-plus-circle mr-2"></i>Ajouter un Benficiaire
     </button>
 
-
     <!-- Ajout Beneficiaire Modal -->
     <div wire:ignore.self class="modal fade" id="addBeneficiaireModal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -85,7 +84,7 @@
         <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4">
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="table table-striped text-center js-basic-example dataTable" id="DataTables_Table_0"
+                    <table class="table table-striped text-center js-basic-example dataTable" id="example"
                         role="grid" aria-describedby="DataTables_Table_0_info">
                         <thead>
                             <tr role="row">
@@ -135,7 +134,11 @@
                                         <span class="text-danger">{{$c->statut}}</span>
                                     @endif
                                 </td>
-                                <td><img src="{{asset('storage/'.$c->document)}}" height="100" alt="image"></td>
+                                <td>
+                                    <a class="btn btn-secondary btn-sm" href="{{asset('storage/'.$c->document)}}">
+                                        <i class="fa fa-download mr-2"></i> Voir document
+                                    </a>
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm text-white" data-toggle="modal"
                                         data-target="#updateBeneficiaireModal" wire:click.prevent="edit({{$c->id}})">

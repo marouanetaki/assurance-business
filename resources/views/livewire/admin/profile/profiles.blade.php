@@ -15,18 +15,35 @@
                 </div>
                 <div class="row mt-2 pl-3">
                     <form>
-                        <label class="labels">Nom Complet</label>
-                        <input type="text" class="form-control" wire:model="name" required>
-                        @error('name') <small class="text-danger">{{$message}}</small> @enderror </br>
+                        <label class="labels col-md-12">Nom Complet
+                            <input type="text" class="form-control" wire:model="name" required>
+                            @error('name') <small class="text-danger">{{$message}}</small> @enderror
+                        </label>
                         
-                        <label class="labels">Email</label>
-                        <input type="text" class="form-control" wire:model="email" required>
-                        @error('email') <small class="text-danger">{{$message}}</small> @enderror </br>
-                        
-                        <label class="labels">Password</label>
-                        <input type="password" class="form-control" wire:model="password" required>
-                        <small class="text-info">Si vous ne voulez pas modifier votre password, merci de réecrire l'ancien</small><br>
-                        @error('password') <small class="text-danger">{{$message}}</small> @enderror </br>
+                        <label class="labels col-md-12">Email
+                            <input type="text" class="form-control" wire:model="email" required>
+                            @error('email') <small class="text-danger">{{$message}}</small> @enderror
+                        </label>
+
+                        <label class="labels col-md-12">Telephone
+                            <input type="tel" class="form-control" wire:model="tel" required>
+                            @error('tel') <small class="text-danger">{{$message}}</small> @enderror
+                        </label>
+
+                        <label class="labels col-md-12">Date de naissance
+                            <input type="date" class="form-control" wire:model="date_naissance" required>
+                            @error('date_naissance') <small class="text-danger">{{$message}}</small> @enderror
+                        </label>
+
+                        <label class="labels col-md-12">Entreprise
+                            <input type="text" class="form-control" disabled>
+                        </label>
+
+                        <label class="labels col-md-12">Password
+                            <input type="password" class="form-control" wire:model="password" required>
+                            <small class="text-info">Si vous ne voulez pas modifier votre password, merci de réecrire l'ancien</small><br>
+                            @error('password') <small class="text-danger">{{$message}}</small> @enderror
+                        </label>
                     </form>
                 </div>
                 <div class="mt-5"><button class="btn btn-primary" type="button" wire:click.prevent='update()'>Save Profile</button></div>
