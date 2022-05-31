@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="http://gstassurance.test/front/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('front/css/style.css')}}">
 
     <!-- icomoon font -->
     <link rel="stylesheet" type="text/css" href="{{asset('front/css/icomoon.css')}}">
