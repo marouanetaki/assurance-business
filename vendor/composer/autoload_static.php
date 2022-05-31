@@ -626,6 +626,7 @@ class ComposerStaticInitbfdfc5d28f66739242be85d8fad490cf
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Exports\\BeneficiairesExport' => __DIR__ . '/../..' . '/app/Exports/BeneficiairesExport.php',
         'App\\Exports\\UsersExport' => __DIR__ . '/../..' . '/app/Exports/UsersExport.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -640,6 +641,7 @@ class ComposerStaticInitbfdfc5d28f66739242be85d8fad490cf
         'App\\Http\\Livewire\\Beneficiaires' => __DIR__ . '/../..' . '/app/Http/Livewire/Beneficiaires.php',
         'App\\Http\\Livewire\\Prises' => __DIR__ . '/../..' . '/app/Http/Livewire/Prises.php',
         'App\\Http\\Livewire\\Profiles' => __DIR__ . '/../..' . '/app/Http/Livewire/Profiles.php',
+        'App\\Http\\Livewire\\Users' => __DIR__ . '/../..' . '/app/Http/Livewire/Users.php',
         'App\\Http\\Livewire\\dossiers\\DetailDossiers' => __DIR__ . '/../..' . '/app/Http/Livewire/dossiers/DetailDossiers.php',
         'App\\Http\\Livewire\\dossiers\\Dossiers' => __DIR__ . '/../..' . '/app/Http/Livewire/dossiers/Dossiers.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -801,6 +803,7 @@ class ComposerStaticInitbfdfc5d28f66739242be85d8fad490cf
         'Database\\Seeders\\PermissionsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/PermissionsTableSeeder.php',
         'Database\\Seeders\\RolesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/RolesTableSeeder.php',
         'Database\\Seeders\\SettingsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/SettingsTableSeeder.php',
+        'Database\\Seeders\\TranslationsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/TranslationsTableSeeder.php',
         'Database\\Seeders\\UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeders/UsersTableSeeder.php',
         'Database\\Seeders\\VoyagerDatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/VoyagerDatabaseSeeder.php',
         'Database\\Seeders\\VoyagerDummyDatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/VoyagerDummyDatabaseSeeder.php',

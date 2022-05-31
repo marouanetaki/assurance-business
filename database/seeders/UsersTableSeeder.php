@@ -23,6 +23,9 @@ class UsersTableSeeder extends Seeder
                 'name'           => 'Admin',
                 'email'          => 'admin@admin.com',
                 'password'       => bcrypt('password'),
+                'date_naissance'       => '',
+                'tel'       => '0695642539',
+                'entreprise'       => 'Orange business services',
                 'remember_token' => Str::random(60),
                 'role_id'        => $role->id,
             ]);

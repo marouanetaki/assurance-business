@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\DataType;
 use TCG\Voyager\Models\MenuItem;
@@ -19,13 +21,6 @@ class TranslationsTableSeeder extends Seeder
         $this->pagesTranslations();
         $this->menusTranslations();
     }
-
-    /**
-     * Auto generate Categories Translations.
-     *
-     * @return void
-     */
-  
 
     /**
      * Auto generate DataTypes Translations.
@@ -50,7 +45,6 @@ class TranslationsTableSeeder extends Seeder
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Utilizador');
         }
-
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.menu.singular'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Menu');
@@ -140,11 +134,6 @@ class TranslationsTableSeeder extends Seeder
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.users'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Utilizadores');
-        }
-
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.categories'));
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Categorias');
         }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.pages'));

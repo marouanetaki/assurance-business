@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Exports\\BeneficiairesExport' => $baseDir . '/app/Exports/BeneficiairesExport.php',
     'App\\Exports\\UsersExport' => $baseDir . '/app/Exports/UsersExport.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -22,6 +23,7 @@ return array(
     'App\\Http\\Livewire\\Beneficiaires' => $baseDir . '/app/Http/Livewire/Beneficiaires.php',
     'App\\Http\\Livewire\\Prises' => $baseDir . '/app/Http/Livewire/Prises.php',
     'App\\Http\\Livewire\\Profiles' => $baseDir . '/app/Http/Livewire/Profiles.php',
+    'App\\Http\\Livewire\\Users' => $baseDir . '/app/Http/Livewire/Users.php',
     'App\\Http\\Livewire\\dossiers\\DetailDossiers' => $baseDir . '/app/Http/Livewire/dossiers/DetailDossiers.php',
     'App\\Http\\Livewire\\dossiers\\Dossiers' => $baseDir . '/app/Http/Livewire/dossiers/Dossiers.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
@@ -183,6 +185,7 @@ return array(
     'Database\\Seeders\\PermissionsTableSeeder' => $baseDir . '/database/seeders/PermissionsTableSeeder.php',
     'Database\\Seeders\\RolesTableSeeder' => $baseDir . '/database/seeders/RolesTableSeeder.php',
     'Database\\Seeders\\SettingsTableSeeder' => $baseDir . '/database/seeders/SettingsTableSeeder.php',
+    'Database\\Seeders\\TranslationsTableSeeder' => $baseDir . '/database/seeders/TranslationsTableSeeder.php',
     'Database\\Seeders\\UsersTableSeeder' => $baseDir . '/database/seeders/UsersTableSeeder.php',
     'Database\\Seeders\\VoyagerDatabaseSeeder' => $baseDir . '/database/seeders/VoyagerDatabaseSeeder.php',
     'Database\\Seeders\\VoyagerDummyDatabaseSeeder' => $baseDir . '/database/seeders/VoyagerDummyDatabaseSeeder.php',
