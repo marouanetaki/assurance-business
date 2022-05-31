@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <link rel="icon" href="https://assurance-consalti.herokuapp.com/front/icon/Favicon.png" type="image/x-icon">
+    <link rel="icon" href="{{ asset('front/icon/Favicon.png') }}" type="image/x-icon">
     <title>Consalti Aassurance</title>
-    <link rel="stylesheet" href="https://assurance-consalti.herokuapp.com/assets/vendor/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="https://assurance-consalti.herokuapp.com/assets/vendor/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://assurance-consalti.herokuapp.com/assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/themify-icons/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/fontawesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css') }}">
 
 
-    <link rel="stylesheet" href="https://assurance-consalti.herokuapp.com/assets/css/main.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" type="text/css">
     @livewireStyles
 </head>
 
@@ -20,7 +20,7 @@
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
-            <div class="m-t-30"><img src="https://assurance-consalti.herokuapp.com/front/icon/Favicon.png" width="48" height="48" alt="ArrOw">
+            <div class="m-t-30"><img src="{{ asset('front/icon/Favicon.png') }}" width="48" height="48" alt="ArrOw">
             </div>
         </div>
     </div>
@@ -145,18 +145,18 @@
 
     </script>
     <!-- Core -->
-    <script src="https://assurance-consalti.herokuapp.com/assets/js/libscripts.bundle.js"></script>
-    <script src="https://assurance-consalti.herokuapp.com/assets/js/vendorscripts.bundle.js"></script>
+    <script src="{{ asset('assets/js/libscripts.bundle.js')}}"></script>
+    <script src="{{ asset('assets/js/vendorscripts.bundle.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-    <script src="https://assurance-consalti.herokuapp.com/assets/js/theme.js"></script>
+    <script src="{{ asset('assets/js/theme.js')}}"></script>
     <!-- Jquery DataTable Plugin Js -->
-    <script src="https://assurance-consalti.herokuapp.com/assets/js/datatablescripts.bundle.js"></script>
-    <script src="https://assurance-consalti.herokuapp.com/assets/vendor/jquery-datatable/buttons/dataTables.buttons.min.js"></script>
-    <script src="https://assurance-consalti.herokuapp.com/assets/vendor/jquery-datatable/buttons/buttons.bootstrap4.min.js"></script>
-    <script src="https://assurance-consalti.herokuapp.com/assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js"></script>
-    <script src="https://assurance-consalti.herokuapp.com/assets/vendor/jquery-datatable/buttons/buttons.flash.min.js"></script>
-    <script src="https://assurance-consalti.herokuapp.com/assets/vendor/jquery-datatable/buttons/buttons.html5.min.js"></script>
-    <script src="https://assurance-consalti.herokuapp.com/assets/js/jquery-datatable.js"></script>
+    <script src="{{asset('assets/js/datatablescripts.bundle.js')}}"></script>
+    <script src="{{asset('assets/vendor/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/jquery-datatable/buttons/buttons.flash.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery-datatable.js')}}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> --}}
