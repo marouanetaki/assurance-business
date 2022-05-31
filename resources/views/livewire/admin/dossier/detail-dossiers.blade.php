@@ -13,7 +13,7 @@
                     <div class="col-md-4">
                         <h4 class="text-info">Infos dossier</h4>
                         <p><b>Date de depot :</b> {{$dossier->date_depot}}</p>
-                        <p><b>Date des soins :</b> {{$dossier->date_depot}}</p>
+                        <p><b>Date des soins :</b> {{$dossier->date_soins}}</p>
                         <p><b>Frais consultations :</b> {{$dossier->frais_consultation}} dh</p>
                         <p><b>Frais pharmacie :</b> {{$dossier->frais_pharmacie}} dh</p>
                         <p><b>Frais Analyse :</b> {{$dossier->frais_analyse}} dh</p>

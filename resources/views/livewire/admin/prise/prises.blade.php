@@ -130,7 +130,7 @@
                                 <td>{{$c->clinique}}</td>
                                 <td>{{$c->type_operation}}</td>
                                 <td>
-                                    <a class="btn btn-secondary btn-sm" href="{{asset('storage/'.$ds)}}">
+                                    <a class="btn btn-secondary btn-sm" href="{{asset('storage/'.$c->dossier)}}">
                                         <i class="fa fa-download mr-2"></i> Voir Dossier
                                     </a>
                                 </td>

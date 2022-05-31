@@ -28,13 +28,13 @@ CREATE TABLE IF NOT EXISTS `accidents` (
   `tel` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Listage des données de la table gstassurance.accidents : ~2 rows (environ)
 /*!40000 ALTER TABLE `accidents` DISABLE KEYS */;
 INSERT INTO `accidents` (`id`, `user_id`, `lieu`, `heure`, `cause`, `created_at`, `tel`, `updated_at`) VALUES
-	(1, 2, 'Deserunt deserunt au', '03:25:00', 'cause lalala', '2022-05-01 16:02:30', '+1 (606) 631-4487', '2022-05-02 21:22:36'),
-	(3, 6, 'Voluptate totam moll', '17:54:00', 'Delectus excepteur ', '2022-05-07 23:24:55', '+1 (612) 403-8746', '2022-05-07 23:25:03');
+	(1, 2, 'Salle de priere', '13:39:00', 'cause', '2022-05-23 11:39:16', '0658747474', '2022-05-23 11:39:16'),
+	(2, 2, 'Escalier', '11:15:00', 'cause', '2022-05-23 11:39:41', '0658747474', '2022-05-23 11:39:41');
 /*!40000 ALTER TABLE `accidents` ENABLE KEYS */;
 
 -- Listage de la structure de la table gstassurance. beneficiaires
@@ -47,18 +47,22 @@ CREATE TABLE IF NOT EXISTS `beneficiaires` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `lien_parente` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `document` text COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table gstassurance.beneficiaires : ~5 rows (environ)
+-- Listage des données de la table gstassurance.beneficiaires : ~8 rows (environ)
 /*!40000 ALTER TABLE `beneficiaires` DISABLE KEYS */;
-INSERT INTO `beneficiaires` (`id`, `nom`, `date_naissance`, `statut`, `user_id`, `created_at`, `updated_at`, `lien_parente`) VALUES
-	(2, 'Sanaa Halim', '1999-09-20', 'Actif', 2, '2022-04-29 16:18:23', '2022-05-05 16:05:10', 'Conjointe'),
-	(4, 'Ryad Razi', '2005-10-11', 'Actif', 2, '2022-04-29 16:49:20', '2022-05-05 16:09:05', 'Enfant'),
-	(8, 'Yasmine Razi', '2017-02-02', 'Actif', 2, '2022-05-05 16:05:56', '2022-05-05 16:08:57', 'Enfant'),
-	(9, 'Hermione Case', '1998-04-12', 'Actif', 6, '2022-05-07 23:25:26', '2022-05-07 23:28:18', 'Conjoint'),
-	(10, 'Reese Decker', '2005-07-06', 'Déces', 6, '2022-05-07 23:25:49', '2022-05-07 23:39:37', 'Enfant'),
-	(11, 'Rajah Jenkins', '1977-04-29', 'Déces', 2, '2022-05-09 10:16:22', '2022-05-09 10:17:14', 'Enfant');
+INSERT INTO `beneficiaires` (`id`, `nom`, `date_naissance`, `statut`, `user_id`, `created_at`, `updated_at`, `lien_parente`, `document`) VALUES
+	(1, 'Ralph Thornton', '2007-10-17', 'Actif', 2, '2022-05-16 15:35:52', '2022-05-23 11:38:13', 'Conjointe', 'beneficiaire\\Marouane Ettaki\\202205161535529596.png'),
+	(2, 'Explicabo Dolor ear', '1986-12-11', 'Déces', 6, '2022-05-17 13:19:41', '2022-05-17 13:19:41', 'Enfant', NULL),
+	(3, 'Rem laborum dolores', '1982-09-01', 'Inactif', 7, '2022-05-17 13:19:51', '2022-05-17 13:19:51', 'Enfant', NULL),
+	(4, 'Alias quaerat aliqui', '1971-07-07', 'Déces', 7, '2022-05-17 13:20:01', '2022-05-17 13:20:01', 'Enfant', NULL),
+	(5, 'Deserunt laborum Po', '2015-12-13', 'Déces', 5, '2022-05-17 13:20:20', '2022-05-17 13:20:20', 'Conjointe', NULL),
+	(6, 'Eu qui lorem consequ', '1978-01-24', 'Déces', 2, '2022-05-17 13:21:18', '2022-05-17 13:21:18', 'Conjointe', NULL),
+	(7, 'Reprehenderit ab eum', '1986-03-27', 'Déces', 6, '2022-05-17 13:22:02', '2022-05-17 13:22:02', 'Conjointe', NULL),
+	(8, 'Elit beatae nostrud', '1995-12-25', 'Inactif', 7, '2022-05-17 13:38:18', '2022-05-17 13:38:18', 'Enfant', NULL),
+	(9, 'Helen Buchanan', '2005-05-10', 'Inactif', 2, '2022-05-23 11:30:54', '2022-05-23 11:30:54', 'Enfant', 'beneficiaire\\Marouane Ettaki\\202205231130544815.png');
 /*!40000 ALTER TABLE `beneficiaires` ENABLE KEYS */;
 
 -- Listage de la structure de la table gstassurance. data_rows
@@ -79,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `data_rows` (
   PRIMARY KEY (`id`),
   KEY `data_rows_data_type_id_foreign` (`data_type_id`),
   CONSTRAINT `data_rows_data_type_id_foreign` FOREIGN KEY (`data_type_id`) REFERENCES `data_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Listage des données de la table gstassurance.data_rows : ~63 rows (environ)
 /*!40000 ALTER TABLE `data_rows` DISABLE KEYS */;
@@ -88,13 +92,13 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 	(2, 1, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, '{}', 2),
 	(3, 1, 'email', 'text', 'Email', 1, 1, 1, 1, 1, 1, '{}', 3),
 	(4, 1, 'password', 'password', 'Password', 1, 0, 0, 1, 1, 0, '{}', 4),
-	(5, 1, 'remember_token', 'text', 'Remember Token', 0, 0, 0, 0, 0, 0, '{}', 5),
-	(6, 1, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 0, '{}', 6),
-	(7, 1, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
-	(8, 1, 'avatar', 'image', 'Avatar', 0, 0, 1, 1, 1, 1, '{}', 8),
-	(9, 1, 'user_belongsto_role_relationship', 'relationship', 'Role', 0, 1, 1, 1, 1, 0, '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsTo","column":"role_id","key":"id","label":"display_name","pivot_table":"roles","pivot":"0","taggable":"0"}', 10),
-	(10, 1, 'user_belongstomany_role_relationship', 'relationship', 'voyager::seeders.data_rows.roles', 0, 0, 0, 1, 1, 0, '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsToMany","column":"id","key":"id","label":"display_name","pivot_table":"user_roles","pivot":"1","taggable":"0"}', 11),
-	(11, 1, 'settings', 'hidden', 'Settings', 0, 0, 0, 0, 0, 0, '{}', 12),
+	(5, 1, 'remember_token', 'text', 'Remember Token', 0, 0, 0, 0, 0, 0, '{}', 9),
+	(6, 1, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 0, '{}', 10),
+	(7, 1, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 11),
+	(8, 1, 'avatar', 'image', 'Avatar', 0, 0, 1, 1, 1, 1, '{}', 12),
+	(9, 1, 'user_belongsto_role_relationship', 'relationship', 'Role', 0, 1, 1, 1, 1, 0, '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsTo","column":"role_id","key":"id","label":"display_name","pivot_table":"roles","pivot":"0","taggable":"0"}', 14),
+	(10, 1, 'user_belongstomany_role_relationship', 'relationship', 'voyager::seeders.data_rows.roles', 0, 0, 0, 1, 1, 0, '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsToMany","column":"id","key":"id","label":"display_name","pivot_table":"user_roles","pivot":"1","taggable":"0"}', 15),
+	(11, 1, 'settings', 'hidden', 'Settings', 0, 0, 0, 0, 0, 0, '{}', 16),
 	(12, 2, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, NULL, 1),
 	(13, 2, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, NULL, 2),
 	(14, 2, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 3),
@@ -104,7 +108,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 	(18, 3, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 3),
 	(19, 3, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4),
 	(20, 3, 'display_name', 'text', 'Display Name', 1, 1, 1, 1, 1, 1, NULL, 5),
-	(21, 1, 'role_id', 'text', 'Role', 0, 1, 1, 1, 1, 1, '{}', 9),
+	(21, 1, 'role_id', 'text', 'Role', 0, 1, 1, 1, 1, 1, '{}', 13),
 	(56, 10, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 	(57, 10, 'nom', 'text', 'Nom', 1, 1, 1, 0, 1, 1, '{}', 2),
 	(58, 10, 'date_naissance', 'date', 'Date Naissance', 1, 1, 1, 0, 1, 1, '{}', 3),
@@ -135,7 +139,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 	(86, 12, 'cause', 'text_area', 'Cause d\'Accident', 0, 1, 1, 0, 1, 1, '{}', 5),
 	(87, 12, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 6),
 	(88, 12, 'accident_belongsto_user_relationship', 'relationship', 'users', 1, 1, 1, 0, 1, 1, '{"model":"App\\\\Models\\\\User","table":"users","type":"belongsTo","column":"user_id","key":"id","label":"name","pivot_table":"accidents","pivot":"0","taggable":"0"}', 7),
-	(89, 1, 'email_verified_at', 'timestamp', 'Email Verified At', 0, 0, 1, 0, 0, 1, '{}', 6),
+	(89, 1, 'email_verified_at', 'timestamp', 'Email Verified At', 0, 1, 1, 0, 0, 1, '{}', 8),
 	(90, 11, 'frais_pharmacie', 'number', 'Frais Pharmacie', 0, 0, 1, 0, 1, 1, '{}', 13),
 	(91, 11, 'frais_consultation', 'number', 'Frais Consultation', 0, 0, 1, 0, 1, 1, '{}', 14),
 	(92, 11, 'frais_analyse', 'number', 'Frais Analyse', 0, 0, 1, 0, 1, 1, '{}', 15),
@@ -151,7 +155,11 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 	(102, 13, 'prise_belongsto_user_relationship', 'relationship', 'User', 1, 1, 1, 0, 1, 1, '{"model":"App\\\\Models\\\\User","table":"users","type":"belongsTo","column":"user_id","key":"id","label":"name","pivot_table":"accidents","pivot":"0","taggable":"0"}', 9),
 	(103, 13, 'type_operation', 'text', 'Type Operation', 0, 1, 1, 1, 1, 1, '{}', 8),
 	(104, 12, 'tel', 'text', 'Tel', 0, 1, 1, 1, 1, 1, '{}', 7),
-	(105, 12, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8);
+	(105, 12, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8),
+	(106, 10, 'document', 'image', 'Document', 0, 1, 1, 0, 1, 1, '{}', 9),
+	(107, 1, 'tel', 'text', 'Telephone', 1, 1, 1, 0, 1, 1, '{}', 6),
+	(108, 1, 'entreprise', 'text', 'Entreprise', 1, 1, 1, 0, 0, 1, '{"default":"Orange business services"}', 7),
+	(109, 1, 'date_naissance', 'date', 'Date Naissance', 0, 1, 1, 1, 1, 1, '{}', 5);
 /*!40000 ALTER TABLE `data_rows` ENABLE KEYS */;
 
 -- Listage de la structure de la table gstassurance. data_types
@@ -179,10 +187,10 @@ CREATE TABLE IF NOT EXISTS `data_types` (
 -- Listage des données de la table gstassurance.data_types : ~6 rows (environ)
 /*!40000 ALTER TABLE `data_types` DISABLE KEYS */;
 INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `display_name_plural`, `icon`, `model_name`, `policy_name`, `controller`, `description`, `generate_permissions`, `server_side`, `details`, `created_at`, `updated_at`) VALUES
-	(1, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', NULL, 1, 0, '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}', '2022-04-29 13:59:58', '2022-05-01 16:04:38'),
+	(1, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', NULL, 1, 0, '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}', '2022-04-29 13:59:58', '2022-05-17 11:14:26'),
 	(2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2022-04-29 13:59:58', '2022-04-29 13:59:58'),
 	(3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2022-04-29 13:59:58', '2022-04-29 13:59:58'),
-	(10, 'beneficiaires', 'beneficiaires', 'Beneficiaire', 'Beneficiaires', 'voyager-group', 'App\\Models\\Beneficiaire', NULL, NULL, NULL, 1, 0, '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":"statut","scope":null}', '2022-04-29 14:46:05', '2022-04-30 14:15:11'),
+	(10, 'beneficiaires', 'beneficiaires', 'Beneficiaire', 'Beneficiaires', 'voyager-group', 'App\\Models\\Beneficiaire', NULL, NULL, NULL, 1, 0, '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":"statut","scope":null}', '2022-04-29 14:46:05', '2022-05-11 08:23:55'),
 	(11, 'dossiers', 'dossiers', 'Dossier', 'Dossiers', 'voyager-book', 'App\\Models\\Dossier', NULL, NULL, NULL, 1, 0, '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}', '2022-04-29 14:54:26', '2022-05-05 14:24:32'),
 	(12, 'accidents', 'accidents', 'Accident', 'Accidents', 'voyager-ticket', 'App\\Models\\Accident', NULL, NULL, NULL, 1, 0, '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}', '2022-04-30 16:55:37', '2022-05-05 15:57:21'),
 	(13, 'prises', 'prises', 'Prise', 'Prises', 'voyager-file-text', 'App\\Models\\Prise', NULL, NULL, NULL, 1, 0, '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}', '2022-05-05 14:17:48', '2022-05-05 15:56:50');
@@ -207,15 +215,13 @@ CREATE TABLE IF NOT EXISTS `dossiers` (
   `frais_analyse` int(11) DEFAULT '0',
   `total` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Listage des données de la table gstassurance.dossiers : ~4 rows (environ)
+-- Listage des données de la table gstassurance.dossiers : ~2 rows (environ)
 /*!40000 ALTER TABLE `dossiers` DISABLE KEYS */;
 INSERT INTO `dossiers` (`id`, `num_dossier`, `date_soins`, `beneficiaire_id`, `date_depot`, `date_remboursement`, `frais_rembourse`, `statut`, `user_id`, `created_at`, `updated_at`, `documents`, `frais_pharmacie`, `frais_consultation`, `frais_analyse`, `total`) VALUES
-	(40, 8095, '2022-04-21', 4, '2022-05-05', NULL, 0, 'En Cours', 2, '2022-05-05 16:09:46', '2022-05-05 16:09:46', '["dossiers\\\\marouane\\\\2022050516094648.jpg","dossiers\\\\marouane\\\\202205051609469076.png"]', 120, 300, 200, 620),
-	(41, 7649, '2022-04-28', 8, '2022-05-05', '2022-05-04', 1800, 'Remboursé', 2, '2022-05-05 16:10:30', '2022-05-05 16:16:09', '["dossiers\\\\marouane\\\\202205051610304074.jpg","dossiers\\\\marouane\\\\202205051610303724.jpg"]', 300, 500, 1200, 2000),
-	(42, 7294, '2022-05-04', 2, '2022-05-05', NULL, 0, 'Rejeté', 2, '2022-05-05 16:17:28', '2022-05-09 10:18:04', '["dossiers\\\\marouane\\\\202205051617282838.jpg"]', 0, 150, 0, 150),
-	(43, 5882, '2010-12-13', 9, '2022-05-07', '2022-05-01', 1700, 'Remboursé', 6, '2022-05-07 23:33:26', '2022-05-07 23:40:45', '["dossiers\\\\Orli Lara\\\\202205072333264015.jpg","dossiers\\\\Orli Lara\\\\202205072333261764.jpg","dossiers\\\\Orli Lara\\\\202205072333262619.jpg"]', 452, 800, 544, 1796);
+	(1, 4522, '2022-05-22', 1, '2022-05-23', NULL, 0, 'En Cours', 2, '2022-05-23 11:42:19', '2022-05-23 11:42:19', '["dossiers\\\\Marouane Ettaki\\\\202205231142191650.jpg","dossiers\\\\Marouane Ettaki\\\\202205231142199901.jpg","dossiers\\\\Marouane Ettaki\\\\20220523114219170.png"]', 578, 921, 329, 1828),
+	(2, 8560, '2021-11-20', 1, '2022-05-23', NULL, 0, 'En Cours', 2, '2022-05-23 11:43:35', '2022-05-23 11:43:35', '["dossiers\\\\Marouane Ettaki\\\\202205231143352986.jpg","dossiers\\\\Marouane Ettaki\\\\202205231143351637.jpg","dossiers\\\\Marouane Ettaki\\\\202205231143354907.jpg","dossiers\\\\Marouane Ettaki\\\\202205231143358579.png"]', 305, 230, 640, 1175);
 /*!40000 ALTER TABLE `dossiers` ENABLE KEYS */;
 
 -- Listage de la structure de la table gstassurance. failed_jobs
@@ -285,7 +291,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 	(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 1, '2022-04-29 13:59:58', '2022-04-30 14:18:03', 'voyager.bread.index', NULL),
 	(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 10, '2022-04-29 13:59:58', '2022-05-05 14:21:14', 'voyager.settings.index', NULL),
 	(14, 1, 'Beneficiaires', '', '_self', 'voyager-group', '#000000', NULL, 2, '2022-04-29 14:46:05', '2022-04-29 15:00:35', 'voyager.beneficiaires.index', 'null'),
-	(15, 1, 'Dossiers', '', '_self', 'voyager-book', '#000000', NULL, 3, '2022-04-29 14:54:26', '2022-04-29 15:00:47', 'voyager.dossiers.index', 'null'),
+	(15, 1, 'Dossiers Médicaux', '', '_self', 'voyager-book', '#000000', NULL, 3, '2022-04-29 14:54:26', '2022-05-16 10:09:14', 'voyager.dossiers.index', 'null'),
 	(16, 1, 'Accidents Travail', '', '_self', 'voyager-ticket', '#000000', NULL, 4, '2022-04-30 16:55:37', '2022-04-30 16:57:40', 'voyager.accidents.index', 'null'),
 	(17, 1, 'Prises en charges', '', '_self', 'voyager-file-text', '#000000', NULL, 5, '2022-05-05 14:17:48', '2022-05-05 14:21:42', 'voyager.prises.index', 'null');
 /*!40000 ALTER TABLE `menu_items` ENABLE KEYS */;
@@ -494,13 +500,13 @@ CREATE TABLE IF NOT EXISTS `prises` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `type_operation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Listage des données de la table gstassurance.prises : ~2 rows (environ)
 /*!40000 ALTER TABLE `prises` DISABLE KEYS */;
 INSERT INTO `prises` (`id`, `beneficiaire_id`, `clinique`, `user_id`, `document`, `created_at`, `updated_at`, `type_operation`) VALUES
-	(8, 2, 'Narjiss', 2, '["prise_en_charge\\\\marouane\\\\202205051615015799.jpg"]', '2022-05-05 16:15:01', '2022-05-05 16:15:01', 'Accouchement'),
-	(9, 9, 'Nomlanga Bird', 6, '["prise_en_charge\\\\Orli Lara\\\\202205072344101674.png"]', '2022-05-07 23:44:10', '2022-05-07 23:44:26', 'kkkk');
+	(1, 1, 'Narjiss', 2, 'prise_en_charge\\Marouane Ettaki\\202205231135559548.png', '2022-05-23 11:35:55', '2022-05-23 11:35:55', 'Accouchement'),
+	(2, 1, 'Ipsam elit officiis', 6, '["prises\\\\May2022\\\\r2VzTirqenEpPBfYYDuv.jpg"]', '2022-05-23 13:23:36', '2022-05-23 13:23:36', 'Et quia sequi pariat');
 /*!40000 ALTER TABLE `prises` ENABLE KEYS */;
 
 -- Listage de la structure de la table gstassurance. roles
@@ -543,11 +549,11 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 	(2, 'site.description', 'Site Description', 'Site Description', '', 'text', 2, 'Site'),
 	(3, 'site.logo', 'Site Logo', '', '', 'image', 3, 'Site'),
 	(4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', NULL, '', 'text', 4, 'Site'),
-	(5, 'admin.bg_image', 'Admin Background Image', '', '', 'image', 5, 'Admin'),
+	(5, 'admin.bg_image', 'Admin Background Image', 'settings\\May2022\\Hf9fQMY98W402aqlm9pQ.jpg', '', 'image', 5, 'Admin'),
 	(6, 'admin.title', 'Admin Title', 'Assurance', '', 'text', 1, 'Admin'),
 	(7, 'admin.description', 'Admin Description', 'Avec Consalti, vous bénéficiez de garanties santé, prévoyance, épargne et retraite complémentaire bien sûr, mais aussi de services sur mesure et d\'un accompagnement social personnalisé. BIENVENUE !', '', 'text', 2, 'Admin'),
-	(8, 'admin.loader', 'Admin Loader', 'settings\\May2022\\qbn1Bf9wnejZMWhjF6RM.png', '', 'image', 3, 'Admin'),
-	(9, 'admin.icon_image', 'Admin Icon Image', 'settings\\May2022\\yJ7isYcusnPDQVWM50oW.png', '', 'image', 4, 'Admin'),
+	(8, 'admin.loader', 'Admin Loader', 'settings\\May2022\\MZ2AGg9VC2AIjUBpvwsg.png', '', 'image', 3, 'Admin'),
+	(9, 'admin.icon_image', 'Admin Icon Image', 'settings\\May2022\\m2bvvDYRFmW0rnzdma3a.png', '', 'image', 4, 'Admin'),
 	(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin');
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 
@@ -613,19 +619,24 @@ CREATE TABLE IF NOT EXISTS `users` (
   `settings` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `tel` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `entreprise` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Orange business services',
+  `date_naissance` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   KEY `users_role_id_foreign` (`role_id`),
   CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Listage des données de la table gstassurance.users : ~4 rows (environ)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-	(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', '2022-05-09 10:44:00', '$2y$10$D4fsXd/PTDshaOXV9V3TJukcVrr68bbiH4H3UVA7GE5q2u5jrdrEO', 'yCKzRWn7LEjCEYkg26nO13qozFeUfDd4ZKBUwQbDDzzxMV7NDw4IsFAJ3hLe', NULL, '2022-04-29 13:59:59', '2022-04-29 13:59:59'),
-	(2, 2, 'Marouane Ettaki', 'ettaki909@gmail.com', 'users/default.png', '2022-05-01 15:29:06', '$2y$10$0neYuzI1mNEbB/HaqaCrGeDxxsqRyR/jKSMTbZtHFiBKPbjtnVWyq', NULL, '{"locale":"en"}', '2022-04-29 14:00:08', '2022-05-05 19:00:49'),
-	(5, 3, 'Taha Ettaki', 'taha@responsable.com', 'users/default.png', NULL, '$2y$10$Wztbl2CpW2R.G40z5q8OMuA0iVY4hEwzW27mKzqdrdf/bziUmYojK', NULL, '{"locale":"en"}', '2022-04-29 15:01:44', '2022-04-29 15:01:44'),
-	(6, 2, 'Orli Lara', 'weture@mailinator.com', 'users/default.png', '2022-05-07 23:22:53', '$2y$10$RSzhq78e2Vme/W8cjGDRnONHHFI7SZXVhsNHi9hUP4nGiPf4Rce2O', 'IMm3v28nWInFhNzSlsBOjxYmaRmX3OMgsZx7x4oJ1mL0D2Ym9AlF7CdaRho1', '{"locale":"en"}', '2022-05-07 23:22:27', '2022-05-07 23:34:32');
+INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`, `tel`, `entreprise`, `date_naissance`) VALUES
+	(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', '2022-05-09 10:44:00', '$2y$10$D4fsXd/PTDshaOXV9V3TJukcVrr68bbiH4H3UVA7GE5q2u5jrdrEO', 'qQl2iQWx6cIGpREE6b7AAqhhUBJcmdhPbR0sGWlhCSdMpmYpEtrQFpHAajFs', '{"locale":"fr"}', '2022-04-29 13:59:59', '2022-05-16 10:28:24', '', '', NULL),
+	(2, 2, 'Marouane Ettaki', 'ettaki909@gmail.com', 'users/default.png', '2022-05-01 15:29:06', '$2y$10$VsMLfL4mdkxnvxxXgUipsuWCAAFsJvqqmYeu39B0bk0cX54gP17iC', NULL, '{"locale":"en"}', '2022-04-29 14:00:08', '2022-05-17 11:10:21', '1123123214', 'Orange business services', '2022-05-06'),
+	(5, 3, 'Taha Ettaki', 'taha@responsable.com', 'users/default.png', NULL, '$2y$10$Wztbl2CpW2R.G40z5q8OMuA0iVY4hEwzW27mKzqdrdf/bziUmYojK', NULL, '{"locale":"en"}', '2022-04-29 15:01:44', '2022-04-29 15:01:44', '', '', NULL),
+	(6, 2, 'Hamid Bazer', 'yayaw2013@outlook.com', 'users/default.png', NULL, '$2y$10$.qiG5cKOXCZgX7JJiNuEtOozcuSaeyzs4KNluvqTO0mMzlOJy2MJW', NULL, '{"locale":"fr"}', '2022-05-17 09:44:45', '2022-05-17 13:21:40', '0695499275', 'Orange business services', NULL),
+	(7, 2, 'Emerald Wagner', 'korac@mailinator.com', 'users/default.png', NULL, '$2y$10$Q2XuiS4ZvaEVcGZCdL1CTuxF0OEllkKm7v1BnnXpX8SS2dNPyJVfG', NULL, NULL, '2022-05-17 11:17:10', '2022-05-17 11:17:10', '0738263749', 'Orange business services', '1988-12-03'),
+	(8, 2, 'Ariana Chaney', 'jilufyzub@mailinator.com', 'users/default.png', NULL, '$2y$10$IJEb7xWpoU1/uBRz0S8/Y.bEfyt6ZqTNe8GHnt0xPI91hBCGGOGDu', NULL, NULL, '2022-05-23 13:30:17', '2022-05-23 13:30:17', '0635369753', 'Orange business services', '1984-09-21');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Listage de la structure de la table gstassurance. user_roles
@@ -641,8 +652,6 @@ CREATE TABLE IF NOT EXISTS `user_roles` (
 
 -- Listage des données de la table gstassurance.user_roles : ~0 rows (environ)
 /*!40000 ALTER TABLE `user_roles` DISABLE KEYS */;
-INSERT INTO `user_roles` (`user_id`, `role_id`) VALUES
-	(6, 2);
 /*!40000 ALTER TABLE `user_roles` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
