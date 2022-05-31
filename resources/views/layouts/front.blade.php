@@ -16,19 +16,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="{{asset('front/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://assurance-consalti.herokuapp.com/front/css/style.css">
 
     <!-- icomoon font -->
-    <link rel="stylesheet" type="text/css" href="{{asset('front/css/icomoon.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://assurance-consalti.herokuapp.com/front/css/icomoon.css">
 
     <!-- Reponsive -->
-    <link rel="stylesheet" type="text/css" href="{{asset('front/css/responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://assurance-consalti.herokuapp.com/front/css/responsive.css">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('front/css/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://assurance-consalti.herokuapp.com/front/css/swiper-bundle.min.css">
 
     <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="{{asset('front/icon/Favicon.png')}}">
-    <link rel="apple-touch-icon-precomposed" href="{{asset('front/icon/Favicon.png')}}">
+    <link rel="shortcut icon" href="https://assurance-consalti.herokuapp.com/front/icon/Favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="https://assurance-consalti.herokuapp.com/front/icon/Favicon.png">
     <!--[if lt IE 9]>
         <script src="javascript/html5shiv.js"></script>
         <script src="javascript/respond.min.js"></script>
@@ -53,8 +53,8 @@
                             <div id="site-logo" class="clearfix">
                                 <div id="site-logo-inner">
                                     <a href="/" rel="home" class="main-logo">
-                                        <img src="{{asset('front/images/logo/logo-light.png')}}" alt="consalti" width="183" height="48"
-                                            data-retina="{{asset('front/images/logo/logo-light@3x.png')}}" data-width="183"
+                                        <img src="https://assurance-consalti.herokuapp.com/front/images/logo/logo-light.png" alt="consalti" width="183" height="48"
+                                            data-retina="https://assurance-consalti.herokuapp.com/front/images/logo/logo-light@3x.png" data-width="183"
                                             data-height="48">
                                     </a>
                                 </div>
@@ -146,7 +146,7 @@
                         <div class="col-md-4">
                             <div class="logo-footer">
                                 <a href="/" rel="home" class="main-logo">
-                                    <img src="{{asset('front/images/logo/logo-dark.png')}}" alt="images">
+                                    <img src="https://assurance-consalti.herokuapp.com/front/images/logo/logo-dark.png" alt="images">
                                 </a>
                             </div>
                             <p class="text-widget">Improve efficiency, provide a better customer experience with modern
@@ -211,16 +211,16 @@
     <a id="scroll-top"></a>
 
     <!-- Javascript -->
-    <script src="{{asset('front/js/jquery.min.js')}}"></script>
-    <script src="{{asset('front/js/wow.min.js')}}"></script>
-    <script src="{{asset('front/js/plugin.js')}}"></script>
-    <script src="{{asset('front/js/jquery-validate.js')}}"></script>
-    <script src="{{asset('front/js/countto.js')}}"></script>
-    <script src="{{asset('front/js/jquery.fancybox.js')}}"></script>
-    <script src="{{asset('front/js/shortcodes.js')}}"></script>
-    <script src="{{asset('front/js/swiper-bundle.min.js')}}"></script>
-    <script src="{{asset('front/js/swiper.js')}}"></script>
-    <script src="{{asset('front/js/main.js')}}"></script>
+    <script src="https://assurance-consalti.herokuapp.com/front/js/jquery.min.js"></script>
+    <script src="https://assurance-consalti.herokuapp.com/front/js/wow.min.js"></script>
+    <script src="https://assurance-consalti.herokuapp.com/front/js/plugin.js"></script>
+    <script src="https://assurance-consalti.herokuapp.com/front/js/jquery-validate.js"></script>
+    <script src="https://assurance-consalti.herokuapp.com/front/js/countto.js"></script>
+    <script src="https://assurance-consalti.herokuapp.com/front/js/jquery.fancybox.js"></script>
+    <script src="https://assurance-consalti.herokuapp.com/front/js/shortcodes.js"></script>
+    <script src="https://assurance-consalti.herokuapp.com/front/js/swiper-bundle.min.js"></script>
+    <script src="https://assurance-consalti.herokuapp.com/front/js/swiper.js"></script>
+    <script src="https://assurance-consalti.herokuapp.com/front/js/main.js"></script>
 
 </body>
 
