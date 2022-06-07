@@ -84,7 +84,7 @@
         <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4">
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="table table-striped text-center js-basic-example dataTable" id="example"
+                    <table class="table table-striped text-center js-basic-example dataTable" 
                         role="grid" aria-describedby="DataTables_Table_0_info">
                         <thead>
                             <tr role="row">
