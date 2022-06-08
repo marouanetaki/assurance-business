@@ -18,12 +18,12 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Auth::routes(['verify' => true]);
 
 // Route Espace Adhérent
-Route::get('dashboard/beneficiaires', Beneficiaires::class)->middleware('verified');
-Route::get('dashboard/dossiers', Dossiers::class)->name('dossier.index')->middleware('verified');
-Route::get('dashboard/details-dossiers/{id}', DetailDossiers::class)->name('dossier.detail')->middleware('verified');
-Route::get('dashboard/accidents-de-travail', Accidents::class)->middleware('verified');
-Route::get('dashboard/prise-en-charge', Prises::class)->middleware('verified');
-Route::get('dashboard', Profiles::class)->middleware('verified');
+Route::get('dashboard/beneficiaires', Beneficiaires::class)->middleware('auth');
+Route::get('dashboard/dossiers', Dossiers::class)->name('dossier.index')->middleware('auth');
+Route::get('dashboard/details-dossiers/{id}', DetailDossiers::class)->name('dossier.detail')->middleware('auth');
+Route::get('dashboard/accidents-de-travail', Accidents::class)->middleware('auth');
+Route::get('dashboard/prise-en-charge', Prises::class)->middleware('auth');
+Route::get('dashboard', Profiles::class)->middleware('auth');
 
 // Export
 Route::get('users/export/', [Users::class, 'export'])->name('users.export')->middleware('auth');
